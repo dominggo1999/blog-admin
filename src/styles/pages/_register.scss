@@ -107,11 +107,12 @@
 @media screen and (max-width: 768px) {
   .register__page {
     overflow: hidden;
-    padding: 0 30px;
+    padding: 30px;
     .bg-small-screen {
       display: block;
       width: 100%;
-      min-height: 100vh;
+      min-height: 650px;
+      height: 100vh;
       position: absolute;
       object-position: center;
       object-fit: cover;
