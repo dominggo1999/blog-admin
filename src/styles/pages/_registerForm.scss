@@ -1,0 +1,39 @@
+// Sign In and Sign Up
+.register__form {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  align-items: center;
+  margin-bottom: auto;
+  .register__input {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    margin-bottom: 15px;
+    position: relative;
+
+    label {
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    input {
+      padding: 5px 20px;
+      border-radius: 20px;
+      border: 1px solid $bgLight;
+      background: none !important;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .error-message {
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      color: #e94e4e;
+      font-size: 13px;
+    }
+  }
+}

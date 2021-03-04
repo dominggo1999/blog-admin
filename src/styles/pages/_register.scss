@@ -1,0 +1,134 @@
+.register__page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: $bgLight;
+  font-family: $rhd;
+
+  .container {
+    background: $w;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+    .register__wrapper {
+      position: relative;
+
+      .left,
+      .right {
+        padding: 0;
+        width: 100%;
+      }
+
+      .left {
+        overflow: hidden;
+        max-height: 600px;
+        img {
+          object-fit: cover;
+          object-position: center;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .right {
+        padding: 20px 60px;
+        background: $w;
+
+        .logo {
+          text-align: center;
+          .logo-icon {
+            display: inline-block;
+            background: url('../../assets//logo.png');
+            width: 100px;
+            height: 60px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+          text-align: center;
+          padding-bottom: 20px;
+        }
+
+        // Tombol persis di bawah form
+        .register-button {
+          background: $bgLight;
+          border: none;
+          padding: 8px 25px;
+          font-size: 18px;
+          font-weight: 500;
+          color: $textDark;
+          border-radius: 25px;
+          color: $w;
+        }
+
+        //Link di pesan paling bawah
+        .register__message {
+          text-align: center;
+          width: 80%;
+          margin: 20px auto;
+          button {
+            color: $bgLight;
+            background: none;
+            outline: none;
+            border: none;
+            font-weight: 500;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .register__page {
+    align-items: flex-start;
+    .container {
+      .register__wrapper {
+        .right {
+          padding: 20px 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .register__page {
+    padding: 0;
+    .container {
+      padding: 0;
+      max-width: 100%;
+      border-radius: 0;
+      .register__wrapper {
+        width: 100%;
+        margin: 0;
+        .right,
+        .left {
+          width: 100%;
+        }
+
+        .right {
+          height: 300px;
+          transform: translateY(-300px);
+          padding: 20px 0;
+
+          .register__message {
+            margin-top: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
