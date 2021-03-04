@@ -8,6 +8,9 @@
   background: $bgLight;
   font-family: $rhd;
   overflow: hidden;
+  .bg-small-screen {
+    display: none;
+  }
 
   .container {
     background: $w;
@@ -56,6 +59,10 @@
           font-size: 20px;
           text-align: center;
           padding-bottom: 20px;
+
+          .brand-name {
+            color: $bgLight;
+          }
         }
 
         // Tombol persis di bawah form
@@ -89,27 +96,34 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .register__page {
+    .container .register__wrapper .right {
+      padding: 20px 10px;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .register__page {
+    overflow: hidden;
     padding: 0 30px;
+    .bg-small-screen {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      position: absolute;
+      object-position: center;
+      object-fit: cover;
+    }
     .container {
       .register__wrapper {
         .left {
-          position: absolute;
-          height: 100vh;
-          overflow: visible;
-          top: 0;
-          left: 0;
-          img {
-            position: absolute;
-            height: 100vh;
-            width: 100%;
-          }
+          display: none;
         }
 
         .right {
           box-shadow: rgba(0, 0, 0, 0.25) 0px -25px 50px -12px;
-          padding: 20px;
         }
       }
     }

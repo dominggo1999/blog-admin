@@ -10,6 +10,10 @@ import SignUp from '../components/SignUp';
 const Register = ({ regSignIn, toggleRegSignIn }) => {
   return (
     <div className="register__page">
+      <img
+        className="bg-small-screen" src="https://images.unsplash.com/photo-1602008194020-13ac6665ebdb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1575&q=80"
+        alt="Hero"
+      />
       <Container>
         <Row className="register__wrapper">
           <Col
@@ -25,7 +29,7 @@ const Register = ({ regSignIn, toggleRegSignIn }) => {
             <div className="logo">
               <span className="logo-icon" />
             </div>
-            <h2>Welcome to <span>bloggrx</span></h2>
+            <h2>Welcome to <span className="brand-name">bloggrx</span></h2>
             <div className="register__message">
               {
               regSignIn
