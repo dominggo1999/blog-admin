@@ -7,6 +7,7 @@
   display: flex;
   background: $bgLight;
   font-family: $rhd;
+  overflow: hidden;
 
   .container {
     background: $w;
@@ -17,8 +18,6 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 
     .register__wrapper {
-      position: relative;
-
       .left,
       .right {
         padding: 0;
@@ -90,43 +89,27 @@
   }
 }
 
-@media screen and (max-width: 992px) {
-  .register__page {
-    align-items: flex-start;
-    .container {
-      .register__wrapper {
-        .right {
-          padding: 20px 10px;
-        }
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 768px) {
   .register__page {
-    padding: 0;
+    padding: 0 30px;
     .container {
-      padding: 0;
-      max-width: 100%;
-      border-radius: 0;
       .register__wrapper {
-        width: 100%;
-        margin: 0;
-        .right,
         .left {
-          width: 100%;
+          position: absolute;
+          height: 100vh;
+          overflow: visible;
+          top: 0;
+          left: 0;
+          img {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+          }
         }
 
         .right {
-          height: 300px;
-          transform: translateY(-300px);
-          padding: 20px 0;
-
-          .register__message {
-            margin-top: 0;
-            text-align: center;
-          }
+          box-shadow: rgba(0, 0, 0, 0.25) 0px -25px 50px -12px;
+          padding: 20px;
         }
       }
     }
