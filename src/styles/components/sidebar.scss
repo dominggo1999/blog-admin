@@ -1,8 +1,23 @@
 .sidebar {
   background: $bgDark;
-  position: fixed;
   min-height: 600px;
   height: 100vh;
+  transition: transform ease-in-out 300ms;
+
+  .sidebar__hamburger {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: -50px;
+    background: $bgLight;
+  }
 
   .sidebar__header {
     background: $bgLight;
@@ -25,11 +40,47 @@
     padding: 10px 0;
 
     li {
+      display: flex;
       a {
-        display: inline-block;
+        align-items: center;
+        display: flex;
         color: $w;
-        padding: 10px 50px;
+        width: 100%;
+        padding: 10px 40px;
       }
+
+      a.active {
+        color: $bgLight;
+      }
+
+      a span {
+        min-width: 120px;
+      }
+
+      a svg {
+        width: 27px;
+        height: 27px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transition: transform ease-in-out 600ms;
+    transform: translateX(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    //When active
+    &.display {
+      transform: translateX(0);
+    }
+
+    .sidebar__hamburger {
+      display: flex;
     }
   }
 }
