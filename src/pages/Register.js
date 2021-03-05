@@ -4,16 +4,12 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import SignIn from '../components/SignIn';
 import { toggleRegSignIn } from '../redux/user/userActions';
-import { selectregSignIn } from '../redux/user/userSelectors';
+import { selectRegSignIn } from '../redux/user/userSelectors';
 import SignUp from '../components/SignUp';
 
 const Register = ({ regSignIn, toggleRegSignIn }) => {
   return (
     <div className="register__page">
-      <img
-        className="bg-small-screen" src="https://images.unsplash.com/photo-1602008194020-13ac6665ebdb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1575&q=80"
-        alt="Hero"
-      />
       <Container>
         <Row className="register__wrapper">
           <Col
@@ -58,7 +54,7 @@ const Register = ({ regSignIn, toggleRegSignIn }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  regSignIn: selectregSignIn,
+  regSignIn: selectRegSignIn,
 });
 
 const mapDispatchToProps = (dispatch) => ({

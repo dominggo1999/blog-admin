@@ -75,13 +75,14 @@
           color: $textDark;
           border-radius: 25px;
           color: $w;
+          margin-top: 5px;
         }
 
         //Link di pesan paling bawah
         .register__message {
           text-align: center;
           width: 80%;
-          margin: 20px auto;
+          margin: 25px auto;
           button {
             color: $bgLight;
             background: none;
@@ -104,19 +105,13 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .register__page {
     overflow: hidden;
     padding: 30px;
-    .bg-small-screen {
-      display: block;
-      width: 100%;
-      min-height: 650px;
-      height: 100vh;
-      position: absolute;
-      object-position: center;
-      object-fit: cover;
-    }
+    background-image: url('https://images.unsplash.com/photo-1602008194020-13ac6665ebdb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1575&q=80');
+    background-position: center;
+    background-size: cover;
     .container {
       .register__wrapper {
         .left {

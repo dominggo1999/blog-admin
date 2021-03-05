@@ -11,7 +11,7 @@ const initialValues = {
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Email is invalid').required('Required'),
-  password: Yup.string().min(8, 'Passwords must contain at least eight characters').required('Required'),
+  password: Yup.string().min(8, 'At least 3 characters').required('Required'),
 
 });
 

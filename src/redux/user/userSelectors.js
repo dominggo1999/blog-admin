@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 const selectUser = (state) => state.user;
 
-export const selectregSignIn = createSelector(
+export const selectRegSignIn = createSelector(
   [selectUser],
   (user) => user.regSignIn,
 );

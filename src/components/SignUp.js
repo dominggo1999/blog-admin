@@ -12,9 +12,9 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().min(3, 'Passwords must contain at least three characters,').required('Required'),
+  name: Yup.string().min(3, 'At least 3 characters,').required('Required'),
   email: Yup.string().email('Email is invalid').required('Required'),
-  password: Yup.string().min(8, 'Passwords must contain at least eight characters').required('Required'),
+  password: Yup.string().min(8, 'At least 8 characters').required('Required'),
   confirmPassword: Yup.string()
     .required('Required').oneOf([Yup.ref('password'), null], 'Passwords must match'),
 });
