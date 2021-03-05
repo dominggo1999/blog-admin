@@ -3,16 +3,17 @@ import {
   Formik, Field, ErrorMessage, Form,
 } from 'formik';
 import * as Yup from 'yup';
+import InputField from './InputField';
 
 const initialValues = {
   email: '',
   password: '',
+  password2: '',
 };
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Email is invalid').required('Required'),
   password: Yup.string().min(8, 'At least 3 characters').required('Required'),
-
 });
 
 const handleSignInSubmit = (values) => {
@@ -26,30 +27,19 @@ const SignIn = () => {
       validationSchema={validationSchema} onSubmit={handleSignInSubmit}
     >
       <Form className="register__form sign-in">
-        <div className="register__input">
-          <label htmlFor="name">Email</label>
-          <Field
-            name="email" id="email"
-            type="email" placeholder="Ex: johndoe@email.com"
-          />
-          <ErrorMessage name="email">
-            {(msg) => (
-              <span className="error-message">{msg}</span>
-            )}
-          </ErrorMessage>
-        </div>
-        <div className="register__input">
-          <label htmlFor="password">Password</label>
-          <Field
-            name="password" id="password"
-            type="password"
-          />
-          <ErrorMessage name="password">
-            {(msg) => (
-              <span className="error-message">{msg}</span>
-            )}
-          </ErrorMessage>
-        </div>
+        <InputField
+          label="Email"
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Ex: johndoe@email.com"
+        />
+        <InputField
+          label="Password"
+          name="password"
+          id="password"
+          type="password"
+        />
         <button className="register-button" type="submit">Sign In </button>
       </Form>
     </Formik>

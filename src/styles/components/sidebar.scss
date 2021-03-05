@@ -1,0 +1,35 @@
+.sidebar {
+  background: $bgDark;
+  position: fixed;
+  min-height: 600px;
+  height: 100vh;
+
+  .sidebar__header {
+    background: $bgLight;
+
+    .logo {
+      text-align: center;
+      padding: 10px 0;
+      .logo-icon {
+        display: inline-block;
+        background: url('../../assets//logo.png');
+        width: 100px;
+        height: 60px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .sidebar__items {
+    padding: 10px 0;
+
+    li {
+      a {
+        display: inline-block;
+        color: $w;
+        padding: 10px 50px;
+      }
+    }
+  }
+}

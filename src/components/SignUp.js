@@ -3,6 +3,7 @@ import {
   Formik, Field, ErrorMessage, Form,
 } from 'formik';
 import * as Yup from 'yup';
+import InputField from './InputField';
 
 const initialValues = {
   name: '',
@@ -19,7 +20,7 @@ const validationSchema = Yup.object().shape({
     .required('Required').oneOf([Yup.ref('password'), null], 'Passwords must match'),
 });
 
-const handleSignInSubmit = (values) => {
+const handleSignUpSubmit = (values) => {
   console.log(values);
 };
 
@@ -27,57 +28,35 @@ const SignUp = () => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema} onSubmit={handleSignInSubmit}
+      validationSchema={validationSchema} onSubmit={handleSignUpSubmit}
     >
       <Form className="register__form sign-up">
-        <div className="register__input">
-          <label htmlFor="name">Name</label>
-          <Field
-            name="name" id="name"
-            type="text" placeholder="Ex: John Doe"
-          />
-          <ErrorMessage name="name">
-            {(msg) => (
-              <span className="error-message">{msg}</span>
-            )}
-          </ErrorMessage>
-        </div>
-        <div className="register__input">
-          <label htmlFor="name">Email</label>
-          <Field
-            name="email" id="email"
-            type="email" placeholder="Ex: johndoe@email.com"
-          />
-          <ErrorMessage name="email">
-            {(msg) => (
-              <span className="error-message">{msg}</span>
-            )}
-          </ErrorMessage>
-        </div>
-        <div className="register__input">
-          <label htmlFor="password">Password</label>
-          <Field
-            name="password" id="password"
-            type="password"
-          />
-          <ErrorMessage name="password">
-            {(msg) => (
-              <span className="error-message">{msg}</span>
-            )}
-          </ErrorMessage>
-        </div>
-        <div className="register__input">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <Field
-            name="confirmPassword" id="confirmPassword"
-            type="password"
-          />
-          <ErrorMessage name="confirmPassword">
-            {(msg) => (
-              <span className="error-message">{msg}</span>
-            )}
-          </ErrorMessage>
-        </div>
+        <InputField
+          label="Name"
+          name="name"
+          id="name"
+          type="text"
+          placeholder="Ex: John Doe"
+        />
+        <InputField
+          label="Email"
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Ex: johndoe@email.com"
+        />
+        <InputField
+          label="Password"
+          name="password"
+          id="password"
+          type="password"
+        />
+        <InputField
+          label="Confirm Password"
+          name="confirmPassword"
+          id="confirmPassword"
+          type="password"
+        />
         <button type="submit" className="register-button">Sign Up </button>
       </Form>
     </Formik>
