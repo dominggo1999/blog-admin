@@ -3,6 +3,7 @@
   min-height: 600px;
   height: 100vh;
   transition: transform ease-in-out 300ms;
+  z-index: 1000;
 
   .sidebar__hamburger {
     display: none;

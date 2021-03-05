@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
+import { hljs } from 'highlight.js';
 import { useQuill } from 'react-quilljs';
 import InputField from '../components/InputField';
 import 'quill/dist/quill.snow.css'; // Add css for snow theme
@@ -34,7 +35,42 @@ const onSubmit = (values) => {
 };
 
 const CreateBlog = () => {
-  const { quill, quillRef } = useQuill();
+  const theme = 'snow';
+  // const theme = 'bubble';
+
+  const modules = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ align: [] }],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ indent: '-1' }, { indent: '+1' }],
+      [{ size: ['small', false, 'large', 'huge'] }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ['link', 'image', 'video'],
+      [{ color: [] }, { background: [] }],
+      ['clean'],
+    ],
+    clipboard: {
+      matchVisual: false,
+    },
+    syntax: true,
+  };
+
+  const formats = ['bold', 'italic', 'underline', 'strike', 'align', 'list', 'indent',
+    'size', 'header', 'link', 'image', 'video', 'color', 'background', 'clean', 'code-block'];
+
+  const { quill, quillRef } = useQuill({
+    theme, modules, formats,
+  });
+
+  useEffect(() => {
+    if (quill) {
+      quill.on('text-change', () => {
+        const content = quill.root.innerHTML;
+        console.log(content);
+      });
+    }
+  }, [quill]);
 
   return (
     <div className="create-blog">
